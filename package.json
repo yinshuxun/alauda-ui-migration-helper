@@ -1,0 +1,30 @@
+{
+  "name": "alauda-ui-migration-helper",
+  "version": "1.0.0",
+  "description": "migration for alauda-ui toast-module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinshuxun/alauda-ui-migration-helper.git"
+  },
+  "keywords": [
+    "alauda-ui",
+    "toast-module",
+    "message-module",
+    "notification-module"
+  ],
+  "author": "sxyin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yinshuxun/alauda-ui-migration-helper/issues"
+  },
+  "homepage": "https://github.com/yinshuxun/alauda-ui-migration-helper#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "glob": "^7.1.2",
+    "split": "^1.0.1"
+  }
+}

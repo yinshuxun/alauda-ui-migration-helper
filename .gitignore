@@ -1,0 +1,8 @@
+*.project
+.settings
+*DS_Store
+.idea
+node_modules
+.vscode/settings.json
+.vscode/chrome
+.cache
