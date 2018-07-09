@@ -10,3 +10,9 @@ alauda-ui-migration-helper /xxx/xxx/project/src
 # scan a specific file
 alauda-ui-migration-helper /xxx/xxx/project/src/xxx.ts
 ```
+
+# Faild
+    Please manually modify this situation
+![Alt text](./pic.png)
+
+    
