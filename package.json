@@ -1,16 +1,8 @@
 {
   "name": "alauda-ui-migration-helper",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "migration for alauda-ui toast-module",
   "main": "index.js",
-  "bin": {
-    "alauda-ui-migration-helper": "index.js"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yinshuxun/alauda-ui-migration-helper.git"
@@ -27,6 +19,15 @@
     "url": "https://github.com/yinshuxun/alauda-ui-migration-helper/issues"
   },
   "homepage": "https://github.com/yinshuxun/alauda-ui-migration-helper#readme",
+  "bin": {
+    "alauda-ui-migration-helper": "index.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
+    "precommit": "lint:fix , test"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "glob": "^7.1.2",
@@ -39,6 +40,8 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "jasmine": "^3.1.0",
+    "pre-commit": "^1.2.2",
     "test": "^3.1.0"
   }
 }

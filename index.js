@@ -34,8 +34,11 @@ glob(filesAndOrFolders, {
           matchRes[action] = true
         }
       })
+      if (/ToastModule/.test(content)) {
+        matchRes.toastModule = true
+      }
 
-      if (!matchRes.alert && !matchRes.message) {
+      if (!matchRes.alert && !matchRes.message && !matchRes.toastModule) {
         if (/[\r\n\s(,]ToastService/gi.test(content)) {
           return resolve({
             name: file,
@@ -54,6 +57,7 @@ glob(filesAndOrFolders, {
           .pipe(matchRes.message && helpers.migrageMessageAction)
           .pipe((matchRes.message || matchRes.alert) && helpers.migrageConstuctorActions(matchRes.message, matchRes.alert))
           .pipe((matchRes.message || matchRes.alert) && helpers.migrateImportActions(matchRes.message, matchRes.alert))
+          .pipe(matchRes.toastModule && helpers.migrageToastModule)
           .end())
       resolve({
         name: file,

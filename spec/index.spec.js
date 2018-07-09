@@ -22,4 +22,9 @@ describe('migtate alauda-ui', () => {
     expect(helper.migrateHelper('this.tt.messageSuccess(123)').pipe(helper.migrageMessageAction).end()).toBe(
       'this.auiMessageService.success(123)')
   })
+
+  it('migrageToastModule', () => {
+    expect(helper.migrateHelper('import {xx,ToastModule,x} from alauda-ui , var exprotModule = [,ToastModule ,]').pipe(helper.migrageToastModule).end()).toBe(
+      'import {xx,NotificationModule, MessageModule,x} from alauda-ui , var exprotModule = [,NotificationModule, MessageModule ,]')
+  })
 })

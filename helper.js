@@ -40,8 +40,8 @@ var migrageConstuctorActions = function (importMessage, importNotification) {
   return function (content) {
     return content.replace(/(private|protected|public)[\r\n\s]*[0-9a-zA-Z]*[\r\n\s]*:[\r\n\s]*ToastService/g,
       (importMessage ? '$1 auiMessageService: MessageService' : '') +
-            (importMessage && importNotification ? ' ,' : '') +
-            (importNotification ? '$1 auiNotificationService: NotificationService' : ''))
+      (importMessage && importNotification ? ' ,' : '') +
+      (importNotification ? '$1 auiNotificationService: NotificationService' : ''))
   }
 }
 
@@ -50,11 +50,15 @@ var migrateImportActions = function (importMessage, importNotification) {
   return function (content) {
     return content.replace(/(import[\r\n\s]*{[\r\n\s\w,]*)ToastService([\r\n\s\w,]*}[\r\n\s\w'"]*alauda-ui)/g,
       '$1' +
-            (importMessage ? 'MessageService' : '') +
-            (importMessage && importNotification ? ', ' : '') +
-            (importNotification ? 'NotificationService' : '') + '$2'
+      (importMessage ? 'MessageService' : '') +
+      (importMessage && importNotification ? ', ' : '') +
+      (importNotification ? 'NotificationService' : '') + '$2'
     )
   }
+}
+
+var migrageToastModule = function (content) {
+  return content.replace(/ToastModule/g, 'NotificationModule, MessageModule')
 }
 
 module.exports = {
@@ -62,6 +66,7 @@ module.exports = {
   migrageConstuctorActions,
   migrageMessageAction,
   migrageAlertAction,
+  migrageToastModule,
   migrateHelper,
   types
 }
