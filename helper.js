@@ -48,7 +48,7 @@ var migrageConstuctorActions = function (importMessage, importNotification) {
 // migrate import ToastService
 var migrateImportActions = function (importMessage, importNotification) {
   return function (content) {
-    return content.replace(/(import[\r\n\s]*{[\r\n\s\w,]*)ToastService([\r\n\s\w,]*}[\r\n\s\w'"]*alauda-ui)/g,
+    return content.replace(/(import[\r\n\s]*{[\r\n\s\w,]*)ToastService([\r\n\s\w,]*}[\r\n\s\w@'"]*alauda-ui)/g,
       '$1' +
       (importMessage ? 'MessageService' : '') +
       (importMessage && importNotification ? ', ' : '') +
